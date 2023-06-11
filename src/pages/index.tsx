@@ -20,7 +20,6 @@ const Home: NextPageAuth = () => {
     'gps coords',
     () => axios.get('http://api.open-notify.org/iss-now.json'),
     {
-      refetchInterval: 1000,
       select: (res) => {
         return res.data.iss_position;
       },
@@ -47,6 +46,7 @@ const Home: NextPageAuth = () => {
           {!!locations?.length &&
             locations.map((item: ILocation) => (
               <div key={item.id}>
+                <p>Пользователь: {item.user}</p>
                 <p>Широта: {item.latitude}</p>
                 <p>Долгота: {item.longitude}</p>
                 <Button
