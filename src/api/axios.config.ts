@@ -4,9 +4,14 @@ import { CONFIG } from './config';
 
 const axiosInstance: AxiosInstance = axios.create({
   withCredentials: true,
-  baseURL: CONFIG.BASE_URL,
+  baseURL: CONFIG.BASE_URL + '/server',
   headers: {
     'Content-Type': 'application/json',
+    // 'ngrok-skip-browser-warning': 'true',
+    'Allow-Cross-Origin': '*',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
   },
   timeout: CONFIG.TIME_OUT,
 });

@@ -1,6 +1,5 @@
 import { FC, ReactNode } from 'react';
 import Sidebar from './Sidebar';
-import { Box } from '@mui/material';
 
 interface Props {
   children: ReactNode;
@@ -9,11 +8,11 @@ interface Props {
 
 const Layout: FC<Props> = ({ children, sidebarContent }) => {
   return (
-    <div className={`flex w-full`}>
-      <Box className="h-screen flex flex-col p-10">
+    <div className="flex w-full flex-wrap">
+      <div className="w-full md:w-1/3 flex flex-col p-10">
         <Sidebar>{sidebarContent}</Sidebar>
-      </Box>
-      <Box className="h-full">{children}</Box>
+      </div>
+      <div className="w-full md:w-2/3 h-full">{children}</div>
     </div>
   );
 };

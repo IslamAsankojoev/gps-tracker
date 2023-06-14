@@ -44,8 +44,8 @@ const GeolocationProvider: FC<IGeolocationProviderProps> = ({ children }) => {
           console.error(error);
         },
         {
-          enableHighAccuracy: true,
-          maximumAge: 2000,
+          // enableHighAccuracy: true,
+          // maximumAge: 2000,
         },
       );
     } else {

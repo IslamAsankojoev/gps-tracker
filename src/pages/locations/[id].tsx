@@ -43,7 +43,7 @@ const Location = () => {
         </div>
       }
     >
-      <Map lat={locationState.latitude} lng={locationState.longitude} zoom={12} marker />
+      <Map lat={locationState.latitude} lng={locationState.longitude} zoom={16} marker />
     </Layout>
   );
 };

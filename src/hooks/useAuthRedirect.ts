@@ -12,7 +12,7 @@ export const useAuthRedirect = () => {
   useEffect(() => {
     if (status === 'loading') return;
     if (!!session?.user) push(redirect);
-  }, [redirect, push, status]);
+  }, [redirect, push, status, session]);
   return null;
 };
 

@@ -17,6 +17,13 @@ const Sidebar: FC<Props> = ({ children }) => {
       >
         Обновить
       </Button>
+      <Button
+        onClick={() => {
+          router.back();
+        }}
+      >
+        Назад
+      </Button>
       <Box>{children}</Box>
     </div>
   );

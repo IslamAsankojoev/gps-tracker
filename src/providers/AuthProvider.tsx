@@ -29,7 +29,7 @@ const AuthProvider: FC<any> = ({ children, Component: { is_auth, is_author, is_n
         signOut();
       }
     })();
-  }, [pathname, asPath]);
+  }, [pathname, asPath, is_auth, isAuth]);
 
   return !is_auth && !is_author && !is_not_auth ? (
     <>{children}</>

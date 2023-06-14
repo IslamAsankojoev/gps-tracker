@@ -1,4 +1,4 @@
 export const CONFIG = {
-  BASE_URL: 'http://localhost:8000/server',
+  BASE_URL: process.env.SERVER_URL,
   TIME_OUT: 90000,
 };

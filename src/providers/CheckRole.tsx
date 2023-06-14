@@ -17,7 +17,7 @@ const CheckRole: FC<{
   const isAuthor = data?.user?.is_author;
   const isNotAuthor = !data?.user?.is_author;
 
-  const MemizeComponent = useMemo(() => memo(Children), [children]);
+  // const MemizeComponent = useMemo(() => memo(Children), [children]);
 
   if (is_auth && isAuth) return <Children />;
   if (is_not_auth && isNotAuth) return <Children />;

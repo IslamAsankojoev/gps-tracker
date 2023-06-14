@@ -2,6 +2,7 @@ import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import axios from 'axios';
 import { AuthService } from '@/api/auth.service';
+import { CONFIG } from '@/api/config';
 
 export type IToken = {
   access: string;
@@ -59,9 +60,9 @@ export default NextAuth({
     maxAge: 24 * 60 * 60 * 1, // 1 day
   },
   pages: {
-    signIn: '/login',
-    signOut: '/login',
-    error: '/login',
+    signIn: CONFIG.BASE_URL,
+    signOut: CONFIG.BASE_URL,
+    error: CONFIG.BASE_URL,
   },
   callbacks: {
     async signIn() {
