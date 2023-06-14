@@ -21,7 +21,7 @@ const Location = () => {
       refetchInterval: 3000,
       select: (data: ILocation) => data,
       onSuccess: (data) => {
-        toast.success(`Пользователь ${data?.user} сменил геолокацию`);
+        toast.success(`Запрос геолокации`);
       },
     },
   );
