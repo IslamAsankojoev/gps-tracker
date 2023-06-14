@@ -35,7 +35,7 @@ const Register: NextPageAuth = () => {
 
   const { mutate: createLocation } = useMutation(
     'createLocation',
-    (data: any) => LocationService.create(data.latitude, data.longitude, data.user),
+    (data: any) => LocationService.create(data?.latitude, data?.longitude, data?.user),
     {
       onSuccess: () => {
         push('/login');
@@ -45,13 +45,13 @@ const Register: NextPageAuth = () => {
 
   const onSubmit = async (data: any) => {
     mutate(
-      { ...data, is_author: data.is_author },
+      { ...data, is_author: data?.is_author },
       {
         onSuccess: (data) => {
           createLocation({
             latitude: '0',
             longitude: '0',
-            user: data.id,
+            user: data?.id,
           });
         },
       },

@@ -14,14 +14,14 @@ const Location = () => {
   });
 
   const { data: location } = useQuery(
-    ['location', router.query.id],
+    ['location', router.query?.id],
     () => LocationService.findOne(router.query.id as string),
     {
       enabled: !!router.query.id,
       refetchInterval: 3000,
       select: (data: ILocation) => data,
       onSuccess: (data) => {
-        toast.success(`Пользователь ${data.user} сменил геолокацию`);
+        toast.success(`Пользователь ${data?.user} сменил геолокацию`);
       },
     },
   );
@@ -43,7 +43,7 @@ const Location = () => {
         </div>
       }
     >
-      <Map lat={locationState.latitude} lng={locationState.longitude} zoom={16} marker />
+      <Map lat={locationState?.latitude} lng={locationState?.longitude} zoom={16} marker />
     </Layout>
   );
 };

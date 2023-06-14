@@ -8,10 +8,6 @@ const axiosInstance: AxiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
     // 'ngrok-skip-browser-warning': 'true',
-    'Allow-Cross-Origin': '*',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-    'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
   },
   timeout: CONFIG.TIME_OUT,
 });

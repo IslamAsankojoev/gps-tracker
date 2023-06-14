@@ -25,8 +25,8 @@ const login: NextPageAuth = () => {
 
   const onSubmit = async (data: any) => {
     await signIn('credentials', {
-      username: data.username,
-      password: data.password,
+      username: data?.username,
+      password: data?.password,
       redirect: false,
     });
   };

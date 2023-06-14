@@ -24,7 +24,7 @@ const Home: NextPageAuth = () => {
     () => axios.get('http://api.open-notify.org/iss-now.json'),
     {
       select: (res) => {
-        return res.data.iss_position;
+        return res.data?.iss_position;
       },
     },
   );
@@ -35,8 +35,8 @@ const Home: NextPageAuth = () => {
     let locationCurrent = locations?.find((item: ILocation) => item.user === session.user.id);
     if (locations) {
       setMarker({
-        lat: Number(locationCurrent.latitude),
-        lng: Number(locationCurrent.longitude),
+        lat: Number(locationCurrent?.latitude),
+        lng: Number(locationCurrent?.longitude),
       });
     }
   }, [locations, session.user.id]);
@@ -49,14 +49,14 @@ const Home: NextPageAuth = () => {
           <br />
           {!!locations?.length &&
             locations.map((item: ILocation) => (
-              <div key={item.id}>
-                <p>Пользователь: {item.user}</p>
-                <p>Широта: {item.latitude}</p>
-                <p>Долгота: {item.longitude}</p>
+              <div key={item?.id}>
+                <p>Пользователь: {item?.user}</p>
+                <p>Широта: {item?.latitude}</p>
+                <p>Долгота: {item?.longitude}</p>
                 <Button
                   size="small"
                   onClick={() => {
-                    router.push(`/locations/${item.id}`);
+                    router.push(`/locations/${item?.id}`);
                   }}
                 >
                   Следить
